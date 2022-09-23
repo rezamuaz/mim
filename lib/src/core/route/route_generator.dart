@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mim/src/presentation/views/detail/detail_page.dart';
 import 'package:mim/src/presentation/views/home/home_page.dart';
+import 'package:mim/src/presentation/views/share/shared_page.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    // const String splashRoute = '/splash';
+    const String sharedPage = '/shared';
     const String homePage = '/';
     const String detailPage = '/detail';
     late final args = settings.arguments as String;
+    late final multiargs = settings.arguments as Map<String, dynamic>;
     switch (settings.name) {
-      // case splashRoute:
-      //   return MaterialPageRoute(builder: (context) => const SplashScreen());
+      case sharedPage:
+        return MaterialPageRoute(
+            builder: (context) => SharedPage(multiargs: multiargs));
 
       case homePage:
         return MaterialPageRoute(builder: (context) => const HomePage());
