@@ -9,7 +9,7 @@ class RouteGenerator {
     const String homePage = '/';
     const String detailPage = '/detail';
     late final args = settings.arguments as String;
-    late final multiargs = settings.arguments as Map<String, dynamic>;
+    late final multiargs = settings.arguments as List<dynamic>;
     switch (settings.name) {
       case sharedPage:
         return MaterialPageRoute(

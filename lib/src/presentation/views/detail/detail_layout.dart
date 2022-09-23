@@ -142,7 +142,13 @@ class _DetailLayoutState extends State<DetailLayout> {
                         ],
                       )),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/shared', arguments: [
+                          widget.imageUrl,
+                          image!.path,
+                          valueText
+                        ]);
+                      },
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: const [
